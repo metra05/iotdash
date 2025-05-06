@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ini untuk mengatasi icon collapse yang tidak muncul -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="heroes.css" rel="stylesheet"> -->
+
+</head>
+<body>
+    <!-- ================ini header dan nav=================== -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Balamantra Tech Node</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbarNav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card1">ajax</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card2">socket.io</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card3">BMKG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card4">panel gauge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card5">panel malc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card6">panel word</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card7">panel tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#card8">jam 7segment</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+
+<!-- ====================ini badannya===================== -->
+    <div class="badan">
+        <div class="b-example-divider"></div>
+
+        <!-- ini tombol led ajax-->
+         <section id="card1"></section>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <!-- <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> -->
+                    <div class="tampung d-block mx-lg-auto ">
+                        <h2 class="sebaris">menghitung dengan ajax sebanyak:  </h2>
+                        <div class="bawah" id="jam"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">tombol ini mematikan dan menyalahkan led</h1>
+                    <p class="lead">tombol ini adalah implementasi ajax untuk merequest mati dan nyalahnya led yang selanjutnya akan mendapat respose dari server dan ditampilkan di frontend</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" onclick="kepencet();" class="btn btn-primary btn-lg px-4 me-md-2">klik aku</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                        <div id="status" class="badge text-bg-secondary" >status led</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <!-- ini status tombol socket io-->
+        <section id="card2"></section>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <!-- <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> -->
+                    <div class="tampung d-block mx-lg-auto "> 
+                        <h2 class="sebaris">menghitung dengan socket io sebanyak:  </h2>
+                        <div class="bawah" id="hitung"></div> 
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">tombol ini mengirim dan menerima status</h1>
+                    <p class="lead">tombol ini adalah menggunakan framework socket io untuk mengirim perintah status variabel ke server ajax untuk merequest mati dan nyalahnya led yang selanjutnya akan mendapat respose dari server dan ditampilkan di frontend</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" id="clicked" class="btn btn-primary btn-lg px-4 me-md-2">click me</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                        <div id="updates" class="badge text-bg-secondary" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <!-- ini rencanya implementasi penggunaan anime atau chart atau display panel  -->
+        <section id="card3"></section>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <!-- <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> -->
+                    <div class="tampung d-block mx-lg-auto "> 
+                        <h2 class="sebaris">menampilkan dengan d3js:  </h2>
+                        <div class="bawah" id="gempa"></div> 
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">card ini mengirim, menerima dan menampilkan status BMKG</h1>
+                    <p class="lead">card ini adalah menggunakan fetc untuk meminta API dari BMKG untuk menyajikan data dari server yang berupa json, permintaan fetc ke server BMKG dapat dilihat di situsnya selanjutya akan ditampilkan di frontend</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" id="clicked" class="btn btn-primary btn-lg px-4 me-md-2">click me</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                        <div id="===" class="badge text-bg-secondary" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <!-- ini rencanya implementasi penggunaan anime atau chart atau display panel  -->
+        <section id="card4"></section>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <!-- <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> -->
+                    <div class="tampung2 d-block mx-lg-auto "> 
+                        <!-- <h2 class="sebaris">menampilkan dengan d3js:  </h2> -->
+                        <!-- <div class="bawah" id="gempa"></div>  -->
+                        <h3>current values</h3>
+                        <div class="container">
+                            <div id="donut1" class="donut flex-child"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">card ini mengirim, menerima dan menampilkan status</h1>
+                    <p class="lead">card ini adalah menggunakan framework d3js untuk menyajikan data dari server, status variabel dikirim ke server untuk merequest dalam bentuk jason, csv, xml ataupun array yang selanjutnya akan ditampilkan di frontend</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" id="clicked" class="btn btn-primary btn-lg px-4 me-md-2">click me</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                        <!-- <div id="===" class="badge text-bg-secondary" ></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+        
+        <!-- ini rencanya implementasi penggunaan anime atau chart atau display panel  -->
+        <section id="card5"></section>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <!-- <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"> -->
+                    <div class="tampung2 d-block mx-lg-auto "> 
+                        <!-- <h2 class="sebaris">menampilkan dengan d3js:  </h2> -->
+                        <!-- <div class="bawah" id="gempa"></div>  -->
+                        <h3>current values</h3>
+                        <div id="malcbody">
+                            <!-- <div id="donut1" class="donut flex-child"></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">card ini mengirim, menerima dan menampilkan status</h1>
+                    <p class="lead">card ini adalah menggunakan framework d3js untuk menyajikan data dari server, status variabel dikirim ke server untuk merequest dalam bentuk jason, csv, xml ataupun array yang selanjutnya akan ditampilkan di frontend</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" id="clicked" class="btn btn-primary btn-lg px-4 me-md-2">click me</button>
+                        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+                        <!-- <div id="===" class="badge text-bg-secondary" ></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <!-- ===============huruf acak ======================================= -->
+        <section id="card6"></section>
+
+        <div class="container col-xxl-8 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div id="word"></div>
+          </div>
+        </div>
+          
+        <div class="b-example-divider"></div>
+
+         <!-- ===============tutorial d3 ======================================= -->
+         <section id="card7"></section>
+
+         <div class="container col-xxl-8 px-4 py-5">
+           <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+             <div >
+                <svg id="tutor" width="1000" height="200">
+                    <g class="chart" >
+                    </g>
+                </svg>
+                <button id="butUpdate">Update</button>
+             </div>
+           </div>
+         </div>
+
+         <!-- garis path -->
+         <div>
+            <svg width="1500" height="100">
+                <g id="gbat"></g>
+            </svg>
+         </div>
+
+         <!-- sevensegment -->
+         <div class="divjam"> 
+            <h2>Number Display</h2>
+            <p>Imitates 7-segment displays using D<sup>3</sup>.</p>
+            <!-- banyaknya digit mengikuti widhtnya -->
+            <svg id ="seven" width="600" height="300"></svg>
+            <p>
+                <input id="number" type="range" max="2000" value="0" style="width:540px" />
+            </p>
+         </div>
+
+
+         <!-- ==============jam dengan seven segment =============================================-->
+         <section id="card8"></section> 
+         <!-- garis path -->
+        <div>
+            <svg width="1500" height="100">
+                <g id="gbat2"></g>
+            </svg>
+        </div>
+       
+         <!-- jam seven segment -->
+         <!-- banyaknya digit mengikuti widhtnya -->
+         <div class="divjam">
+             <div class="jamstyle">
+                <!-- id jam sudah ada yang memakai makanya pakai jam 2 -->
+                 <svg id ="jam2" width="300" height="200"></svg> 
+             </div>
+    
+             <div id="titik2j" ><svg class="titik2s" ></svg></div>
+             
+             <div class="jamstyle">
+                 <svg id ="menit" width="300" height="200"></svg>
+             </div>
+             
+             <div id="titik2m"><svg class="titik2s" ></svg></div>
+             
+             <div class="jamstyle">
+                <svg id ="detik" width="300" height="200"></svg>
+            </div>
+         </div>
+           
+         <div class="b-example-divider"></div>
+ 
+
+    </div>
+
+<!-- ======================ini foter================== -->
+    <div class="footer">
+        <div class="bg-dark text-secondary px-4 py-5 text-center">
+            <div class="py-5">
+              <h1 class="display-5 fw-bold text-white">Balamantra Tech Node</h1>
+              <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">dashboard ini didesain untuk raspberry pi, penggunaan gpionya dengan menggunakan library on-off, untuk project yang lain silahkan kontak <a href="http://metra05.github.io/balamantra">http://metra05.github.io/balamantra</a> </p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- <script src="https://cdn.socket.io/1.2.0/socket.io.min.js"></script> -->
+    <!-- ini adalah otomatis global variable ketika di install di npm  -->
+    <script src="/socket.io/socket.io.js"> </script>
+    <!-- <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script> -->
+    
+    <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+    <script src="./d3.v7.min.js"></script> 
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.7/d3.layout.cloud.min.js"></script> -->
+    <!-- <script src="./d3-cloud.js"></script>  -->
+    <script src="./d3.layout.cloud.js"></script> 
+
+    <script src="./donut.js"></script>
+    <script src="./malcolm.js"></script>
+    <script src="./textobserv.js"></script>
+    <script src="./NumberDisplay.js"></script>
+
+    <script src="./script.js"> </script>
+
+
+    <!-- =================================== -->
+
+
+</body>
+</html>
