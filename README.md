@@ -1,0 +1,1 @@
+untuk penggunaan lybrari silahkan chek package dependencis di pakage.json !!! saya sendiri sudah lupa apa saja yang saya gunakan, baik itu untuk backend(socket.io, websocket, express) maupun untuk frontendnya(d3.js, bootstrap). 
